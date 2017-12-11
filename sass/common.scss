@@ -4,28 +4,28 @@
 @import "settings";
 
 body {
-	font-family :'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-	color		: lighten($black, 30%);
-	width		: $max;
-	font-size	: 16px;
-	line-height	: 1.75em;
-	overflow-x	: hidden;
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	color: lighten($black, 30%);
+	width: $max;
+	font-size: 16px;
+	line-height: 1.75em;
+	overflow-x: hidden;
 	
-	@include media($of) {
+	@include media($th) {
 		font-size: 0.875rem;
 	}
 	
-	@include media($th) {
+	@include media($of) {
 		font-size: 0.75rem;
 	}
 	
-	@include media($s) {
+	@include media($sv) {
 		font-size: 0.625rem;
 	}
 
 	a {
-		color: $blue2;
-		text-decoration: none;
+		color			: $white;
+		text-decoration	: none;
 		
 		&:hover {
 			text-decoration: none;

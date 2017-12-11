@@ -4,30 +4,18 @@
 @import "settings";
 
 footer,footer a {
-	color			: $white;
-	background-color: $blue2;
+	color: $white;
+	background-color: $blue;
 	
 	 ul {
-		display			: flex;
-		flex-flow		: row wrap;
-		justify-content	: center;
-		align-items		: stretch;
-		align-content	: flex-start;
-		padding			: 1.5em 3em;
-		vertical-align	: bottom;
+		margin: 0 auto;
+		padding: 1.5em 0;
 	}
 	
-	li {
-		flex: 1 1 320px;
-	
-		small {
-			display		: block;
-			text-align	: right;
-			font-size 	: 0.9em;
-			
-			@include media($s) {
-				text-align: left;
-			}
-		}
+	small {
+		display: block;
+		text-align: right;
+		font-size: 1em * 0.9;
+		margin-top: -1em * 1.8;
 	}
 }

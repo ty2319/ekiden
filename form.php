@@ -18,7 +18,7 @@ $count = pg_fetch_assoc($rs);
 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="ja">
 <head>
-	<title>ＮＴＴ西日本｜第12回ＮＴＴグループ駅伝大会</title>
+	<title>ＮＴＴ西日本｜第13回ＮＴＴグループ駅伝大会</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
 	<meta http-equiv="Content-Script-Type" content="text/javascript">
 	<meta http-equiv="Content-Style-Type" content="text/css">

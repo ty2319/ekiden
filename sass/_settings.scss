@@ -2,7 +2,9 @@
 
 $max: 100%;
 
-$s: 700px;
+$sv: 700px;
+
+$nf: 940px;
 
 $th: 1000px;
 
@@ -20,20 +22,18 @@ $black: #000;
 
 $blue: #0278d2;
 
-$blue2: #0762d2;
-
 //-------------------------------
 
 
 
 //background ------------------------------------------------------------
 
-$back: rgba($white,0.7);
+$back: rgba(#FFF,0.3);
 
 @mixin Back {
 	background-color: $back;
-	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#99FFFFFF,EndColorStr=#99FFFFFF);
-	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#99FFFFFF,EndColorStr=#99FFFFFF)";
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#55FFFFFF,EndColorStr=#55FFFFFF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#55FFFFFF,EndColorStr=#55FFFFFF)";
 }
 
 //-----------------------------------------------------------------------
@@ -49,9 +49,9 @@ $back: rgba($white,0.7);
 	z-index: $z;
 }
 
-@mixin abR($top,$right,$z) {
+@mixin abB($bottom,$right,$z) {
 	position: absolute;
-	top: $top;
+	bottom: $bottom;
 	right: $right;
 	z-index: $z;
 }
@@ -79,11 +79,6 @@ $back: rgba($white,0.7);
 
 $r: relative;
 
-@mixin NF {
-	width: 940px;
-	margin: 0 auto;
-}
-
 //---------------------------------
 
 
@@ -98,13 +93,7 @@ $ip: '../img/';
 //media query ---------------------
  
 @mixin media($mediaSize) {
-  @if $mediaSize <= $s{
-    @media all and (max-width: $s) {
-      @content
-    }
-  }
-  
-  @else if $mediaSize <= $th{
+  @if $mediaSize <= $th{
     @media all and (max-width: $th) {
       @content
     }
