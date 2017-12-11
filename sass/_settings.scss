@@ -1,0 +1,121 @@
+//width&height ------------------
+
+$max: 100%;
+
+$s: 700px;
+
+$th: 1000px;
+
+$of: 1500px;
+
+//-------------------------------
+
+
+
+//color -------------------------
+
+$white: #fff;
+
+$black: #000;
+
+$blue: #0278d2;
+
+$blue2: #0762d2;
+
+//-------------------------------
+
+
+
+//background ------------------------------------------------------------
+
+$back: rgba($white,0.7);
+
+@mixin Back {
+	background-color: $back;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#99FFFFFF,EndColorStr=#99FFFFFF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#99FFFFFF,EndColorStr=#99FFFFFF)";
+}
+
+//-----------------------------------------------------------------------
+
+
+
+//position -------------------------
+
+@mixin abT($top,$left,$z) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	z-index: $z;
+}
+
+@mixin abR($top,$right,$z) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	z-index: $z;
+}
+
+@mixin fixT($top,$right,$z) {
+	position: fixed;
+	top: $top;
+	right: $right;
+	z-index: $z;
+}
+
+@mixin fixB($bottom,$right,$z) {
+	position: fixed;
+	bottom: $bottom;
+	right: $right;
+	z-index: $z;
+}
+
+@mixin fixL($top,$left,$z) {
+	position: fixed;
+	top: $top;
+	left: $left;
+	z-index: $z;
+}
+
+$r: relative;
+
+@mixin NF {
+	width: 940px;
+	margin: 0 auto;
+}
+
+//---------------------------------
+
+
+
+//img path ------------------------
+
+$ip: '../img/';
+
+//---------------------------------
+
+
+//media query ---------------------
+ 
+@mixin media($mediaSize) {
+  @if $mediaSize <= $s{
+    @media all and (max-width: $s) {
+      @content
+    }
+  }
+  
+  @else if $mediaSize <= $th{
+    @media all and (max-width: $th) {
+      @content
+    }
+  }
+  
+  @else if $mediaSize <= $of{
+    @media all and (max-width: $of) {
+      @content
+    }
+  }
+  
+}
+
+//---------------------------------
