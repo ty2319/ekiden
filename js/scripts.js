@@ -39,52 +39,52 @@
 			$('.slidebox:first').clone().appendTo('header');
 		}
 		
-		$('.slider:odd').addClass('leftslide');
-		$('.slider:even').addClass('rightslide');
+		$('.slider:odd').addClass('topslide');
+		$('.slider:even').addClass('bottomslide');
 		
 		$('.leftslide').each(function() {
 			
-			var elmL = $(this),
-			ulwL	 = elmL.find('ul:first'),
-			cntL	 = ulwL.find('li').length,
-			wthL	 = cntL * 150;
+			var elmT = $(this),
+			ulhT	 = elmT.find('ul:first'),
+			cntT	 = ulhT.find('li').length,
+			hgtT	 = cntT * 150;
 			
-			if (wthL < $(window).width()) {
-				ulwL.clone().appendTo(elmL);
+			if (hgtT < $(window).height()) {
+				ulhT.clone().appendTo(elmT);
 			}
 			 
-			function loopleft(){
+			function looptop(){
 				 
-				elmL.animate({left: -wthL}, 4500*cntL ,'linear',function(){
-					elmL.css({left:'0'});
-					loopleft();
+				elmT.animate({top: -hgtT}, 4500*cntT ,'linear',function(){
+					elmT.css({top:'0'});
+					looptop();
 				});
 			};
-			loopleft();
+			looptop();
 		});
 		
-		$('.rightslide').each(function() {
+		$('.bottomslide').each(function() {
 			
-			var elmR	= $(this),
-			ulwR		= elmR.find('ul:first'),
-			cntR		= ulwR.find('li').length,
-			wthR		= cntR * 150;
+			var elmB	= $(this),
+			ultB		= elmB.find('ul:first'),
+			cntB		= ultB.find('li').length,
+			hgtB		= cntB * 150;
 			
-			if (wthR < $(window).width()) {
-				ulwR.clone().prependTo(elmR);
+			if (hgtB < $(window).height()) {
+				ultB.clone().prependTo(elmB);
 			}
 			
-			var allw	  = elmR.find('li').length * 150,
-				rightside = allw - $(window).width();
+			var allh	  = elmB.find('li').length * 150,
+				bottomside = allh - $(window).height();
 			
-			function loopright(){
+			function loopbottom(){
 				 
-				elmR.css('left' , -rightside).animate({left: -rightside + wthR}, 4500*cntR ,'linear',function(){
-					elmR.css({left: -rightside});
-					loopright();
+				elmB.css('bottom' , -bottomside).animate({bottom: -bottomside + hgtB}, 4500*cntB ,'linear',function(){
+					elmB.css({left: -bottomside});
+					loopbottom();
 				});
 			};
-			loopright();
+			loopbottom();
 		});
 	},
 
