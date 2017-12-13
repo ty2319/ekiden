@@ -1,0 +1,48 @@
+/* CSS Document */
+/* line 6, ../sass/footer.scss */
+footer, footer a {
+  color: #fff;
+  background-color: #0762d2;
+}
+/* line 10, ../sass/footer.scss */
+footer ul, footer a ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  padding: 1.5em 3em;
+  vertical-align: bottom;
+}
+/* line 20, ../sass/footer.scss */
+footer li, footer a li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 320px;
+      -ms-flex: 1 1 320px;
+          flex: 1 1 320px;
+}
+/* line 23, ../sass/footer.scss */
+footer li small, footer a li small {
+  display: block;
+  text-align: right;
+  font-size: 0.9em;
+}
+@media all and (max-width: 700px) {
+  /* line 23, ../sass/footer.scss */
+  footer li small, footer a li small {
+    text-align: left;
+  }
+}

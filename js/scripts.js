@@ -35,19 +35,19 @@
 			cnt = false;
 		}
 			
-		if ($(window).height() > $('.slidebox').height() * $('.slidebox').length) {
+		if ($(window).width() > $('.slidebox').width() * $('.slidebox').length) {
 			$('.slidebox:first').clone().appendTo('header');
 		}
 		
 		$('.slider:odd').addClass('topslide');
 		$('.slider:even').addClass('bottomslide');
 		
-		$('.leftslide').each(function() {
+		$('.topslide').each(function() {
 			
 			var elmT = $(this),
-			ulhT	 = elmT.find('ul:first'),
-			cntT	 = ulhT.find('li').length,
-			hgtT	 = cntT * 150;
+				ulhT = elmT.find('ul:first'),
+				cntT = ulhT.find('li').length,
+				hgtT = cntT * 100;
 			
 			if (hgtT < $(window).height()) {
 				ulhT.clone().appendTo(elmT);
@@ -56,7 +56,7 @@
 			function looptop(){
 				 
 				elmT.animate({top: -hgtT}, 4500*cntT ,'linear',function(){
-					elmT.css({top:'0'});
+					elmT.css({top: 0});
 					looptop();
 				});
 			};
@@ -71,16 +71,13 @@
 			hgtB		= cntB * 150;
 			
 			if (hgtB < $(window).height()) {
-				ultB.clone().prependTo(elmB);
+				ultB.clone().apendTo(elmB);
 			}
-			
-			var allh	  = elmB.find('li').length * 150,
-				bottomside = allh - $(window).height();
 			
 			function loopbottom(){
 				 
-				elmB.css('bottom' , -bottomside).animate({bottom: -bottomside + hgtB}, 4500*cntB ,'linear',function(){
-					elmB.css({left: -bottomside});
+				elmB.css('top' , -hgtB).animate({top: 0}, 4500*cntB ,'linear',function(){
+					elmB.css({top: -hgtB});
 					loopbottom();
 				});
 			};
