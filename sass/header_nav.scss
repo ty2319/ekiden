@@ -6,11 +6,10 @@
 header {
 	background	: $black;
 	overflow	: hidden;
-	display: flex;
+	display		: flex;
 	
 	h1 {
 		@include abT(1em,1em,1);
-		z-index: 1;
 		
 		 img {
 			width	 : $max * 0.08;
@@ -45,12 +44,12 @@ header {
 	}
 	
 	.slidebox {
-		display: flex;
+		display	: flex;
+		width	: 1050px;
 		
 		.slider {
-			opacity	: 0.7;
+			opacity	: 0.5;
 			position: $r;
-			z-index	: 0;
 		}
 	}
 }
@@ -90,8 +89,9 @@ nav {
 		}
 	
 		li {
-			font-weight: bold;
-			text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
+			font-weight	: bold;
+			text-shadow	: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
+			margin		: 0 2em;
 			
 			@include media($sv) {
 				font-size: $max * 1.25;
@@ -99,7 +99,7 @@ nav {
 			}
 			
 			a {
-				color: darken(blue , 20%);
+				color: $blue;
 				vertical-align: text-bottom;
 				
 				span {
@@ -113,12 +113,12 @@ nav {
 				}
 				
 				&:hover {
-					color: $blue;
+					color: lighten($blue , 20%);
 				}
 			}
 			
 			&.cu a {
-				color: $blue;
+				color: lighten($blue , 20%);
 			}
 		}
 	}
@@ -128,9 +128,9 @@ nav {
 		background-color: $back;
 		padding			: 0.5em;
 		display			: flex;
+		justify-content	: space-between;
 		margin-top		: 0;
 		transition		: margin-top 1s ease 1s;
-		vertical-align	: bottom;
 		
 		h2 {
 			margin	 : 0;
@@ -157,9 +157,7 @@ nav {
 		}
 		
 		#global {
-			display			: flex;
-			justify-content	: space-around;
-			text-align		: right;
+			margin: 0.5em 0 0 20em;
 			
 			@include media($sv) {
 				display: none;

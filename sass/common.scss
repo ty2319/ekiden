@@ -9,7 +9,6 @@ body {
 	width: $max;
 	font-size: 16px;
 	line-height: 1.75em;
-	overflow-x: hidden;
 	
 	@include media($th) {
 		font-size: 0.875rem;
@@ -24,12 +23,8 @@ body {
 	}
 
 	a {
-		color			: $white;
+		color			: $blue;
 		text-decoration	: none;
-		
-		&:hover {
-			text-decoration: none;
-		}
 	}
 	
 	img {

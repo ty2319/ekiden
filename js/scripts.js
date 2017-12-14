@@ -56,7 +56,7 @@
 			function looptop(){
 				 
 				elmT.animate({top: -hgtT}, 4500*cntT ,'linear',function(){
-					elmT.css({top: 0});
+					elmT.css('top' , 0);
 					looptop();
 				});
 			};
@@ -68,16 +68,16 @@
 			var elmB	= $(this),
 			ultB		= elmB.find('ul:first'),
 			cntB		= ultB.find('li').length,
-			hgtB		= cntB * 150;
+			hgtB		= cntB * 100;
 			
 			if (hgtB < $(window).height()) {
-				ultB.clone().apendTo(elmB);
+				ultB.clone().prependTo(elmB);
 			}
 			
 			function loopbottom(){
 				 
-				elmB.css('top' , -hgtB).animate({top: 0}, 4500*cntB ,'linear',function(){
-					elmB.css({top: -hgtB});
+				elmB.css('top' , -hgtB + 'px').animate({top: 0}, 4500*cntB ,'linear',function(){
+					elmB.css('top' , -hgtB + 'px');
 					loopbottom();
 				});
 			};
