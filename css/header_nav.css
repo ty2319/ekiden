@@ -51,15 +51,14 @@ header #form div {
 /* line 46, ../sass/header_nav.scss */
 header .slidebox {
   display: flex;
-  width: 1050px;
 }
-/* line 50, ../sass/header_nav.scss */
+/* line 49, ../sass/header_nav.scss */
 header .slidebox .slider {
   opacity: 0.5;
   position: relative;
 }
 
-/* line 57, ../sass/header_nav.scss */
+/* line 56, ../sass/header_nav.scss */
 nav {
   position: absolute;
   top: 50%;
@@ -71,24 +70,24 @@ nav {
   text-align: center;
 }
 @media all and (max-width: 1000px) {
-  /* line 57, ../sass/header_nav.scss */
+  /* line 56, ../sass/header_nav.scss */
   nav {
     margin-top: -10em;
   }
 }
-/* line 68, ../sass/header_nav.scss */
+/* line 67, ../sass/header_nav.scss */
 nav h2 img {
   width: 461px;
   height: 142px;
 }
 @media all and (max-width: 1000px) {
-  /* line 68, ../sass/header_nav.scss */
+  /* line 67, ../sass/header_nav.scss */
   nav h2 img {
     width: 230px;
     height: 71px;
   }
 }
-/* line 78, ../sass/header_nav.scss */
+/* line 77, ../sass/header_nav.scss */
 nav #global {
   margin-top: 1em;
   color: gray;
@@ -96,7 +95,7 @@ nav #global {
   justify-content: center;
 }
 @media all and (max-width: 1000px) {
-  /* line 78, ../sass/header_nav.scss */
+  /* line 77, ../sass/header_nav.scss */
   nav #global {
     width: 230px;
     margin: 1.5em auto 0 auto;
@@ -104,74 +103,76 @@ nav #global {
     flex-direction: column;
   }
 }
-/* line 91, ../sass/header_nav.scss */
+/* line 90, ../sass/header_nav.scss */
 nav #global li {
   font-weight: bold;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
   margin: 0 2em;
 }
 @media all and (max-width: 1000px) {
-  /* line 91, ../sass/header_nav.scss */
+  /* line 90, ../sass/header_nav.scss */
   nav #global li {
     font-size: 125%;
     margin: 0 0 0.3em 3em;
   }
 }
-/* line 101, ../sass/header_nav.scss */
+/* line 100, ../sass/header_nav.scss */
 nav #global li a {
   color: #0278d2;
   vertical-align: text-bottom;
 }
-/* line 105, ../sass/header_nav.scss */
+/* line 104, ../sass/header_nav.scss */
 nav #global li a span {
   margin-right: 0.5em;
   font-size: 1em;
   text-shadow: none;
 }
-/* line 111, ../sass/header_nav.scss */
+/* line 110, ../sass/header_nav.scss */
 nav #global li a em {
   font-style: normal;
 }
-/* line 115, ../sass/header_nav.scss */
+/* line 114, ../sass/header_nav.scss */
 nav #global li a:hover {
   color: #3daafd;
 }
-/* line 120, ../sass/header_nav.scss */
+/* line 119, ../sass/header_nav.scss */
 nav #global li.cu a {
   color: #3daafd;
 }
-/* line 126, ../sass/header_nav.scss */
+/* line 125, ../sass/header_nav.scss */
 nav.ver2 {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 0.5em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0;
   transition: margin-top 1s ease 1s;
 }
-/* line 135, ../sass/header_nav.scss */
+/* line 136, ../sass/header_nav.scss */
 nav.ver2 h2 {
   margin: 0;
   width: 20%;
   min-width: 120px;
 }
-/* line 140, ../sass/header_nav.scss */
+/* line 141, ../sass/header_nav.scss */
 nav.ver2 h2 img {
   width: 100%;
   max-width: 200px;
   height: auto;
   margin: 0;
 }
-/* line 148, ../sass/header_nav.scss */
+/* line 149, ../sass/header_nav.scss */
 nav.ver2 .menu-trigger {
   display: none;
 }
 @media all and (max-width: 1000px) {
-  /* line 148, ../sass/header_nav.scss */
+  /* line 149, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger {
     width: 20%;
     cursor: pointer;
@@ -179,23 +180,24 @@ nav.ver2 .menu-trigger {
     padding: 0.8% 1%;
   }
 }
-/* line 159, ../sass/header_nav.scss */
+/* line 160, ../sass/header_nav.scss */
 nav.ver2 #global {
-  margin: 0.5em 0 0 20em;
+  justify-content: flex-end;
+  width: 80%;
 }
 @media all and (max-width: 1000px) {
-  /* line 159, ../sass/header_nav.scss */
+  /* line 160, ../sass/header_nav.scss */
   nav.ver2 #global {
     display: none;
   }
 }
 @media all and (max-width: 1000px) {
-  /* line 167, ../sass/header_nav.scss */
+  /* line 169, ../sass/header_nav.scss */
   nav.ver2 #global li em {
     display: none;
   }
 }
-/* line 174, ../sass/header_nav.scss */
+/* line 176, ../sass/header_nav.scss */
 nav #prev {
   position: fixed;
   top: 40%;
@@ -206,17 +208,17 @@ nav #prev {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 181, ../sass/header_nav.scss */
+/* line 183, ../sass/header_nav.scss */
 nav #prev:hover {
   color: #0278d2;
 }
 @media all and (max-width: 1000px) {
-  /* line 174, ../sass/header_nav.scss */
+  /* line 176, ../sass/header_nav.scss */
   nav #prev {
     display: none;
   }
 }
-/* line 190, ../sass/header_nav.scss */
+/* line 192, ../sass/header_nav.scss */
 nav #next {
   position: fixed;
   top: 50%;
@@ -226,12 +228,12 @@ nav #next {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 196, ../sass/header_nav.scss */
+/* line 198, ../sass/header_nav.scss */
 nav #next:hover {
   color: #0278d2;
 }
 @media all and (max-width: 1000px) {
-  /* line 190, ../sass/header_nav.scss */
+  /* line 192, ../sass/header_nav.scss */
   nav #next {
     display: none;
   }

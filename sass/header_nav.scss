@@ -45,7 +45,6 @@ header {
 	
 	.slidebox {
 		display	: flex;
-		width	: 1050px;
 		
 		.slider {
 			opacity	: 0.5;
@@ -125,10 +124,12 @@ nav {
 	
 	&.ver2 {
 		@include fixT(0,0,2);
+		width			: $max;
 		background-color: $back;
 		padding			: 0.5em;
 		display			: flex;
 		justify-content	: space-between;
+		align-items		: center;
 		margin-top		: 0;
 		transition		: margin-top 1s ease 1s;
 		
@@ -157,7 +158,8 @@ nav {
 		}
 		
 		#global {
-			margin: 0.5em 0 0 20em;
+			justify-content	: flex-end;
+			width			: $max * 0.8;
 			
 			@include media($sv) {
 				display: none;

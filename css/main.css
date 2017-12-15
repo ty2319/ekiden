@@ -298,6 +298,7 @@ article p {
 article #tab {
   margin: 5em 3em 0 2em;
   display: flex;
+  align-items: flex-end;
 }
 @media all and (max-width: 1000px) {
   /* line 298, ../sass/main.scss */
@@ -305,11 +306,11 @@ article #tab {
     margin: 3em 1em 0 1em;
   }
 }
-/* line 306, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 article #tab li {
   vertical-align: bottom;
 }
-/* line 309, ../sass/main.scss */
+/* line 310, ../sass/main.scss */
 article #tab li a {
   display: block;
   margin-left: 1em;
@@ -320,29 +321,29 @@ article #tab li a {
   font-weight: bold;
 }
 @media all and (max-width: 1000px) {
-  /* line 309, ../sass/main.scss */
+  /* line 310, ../sass/main.scss */
   article #tab li a {
     margin-left: 0.5em;
   }
 }
-/* line 322, ../sass/main.scss */
+/* line 323, ../sass/main.scss */
 article #tab li a#mens {
   background-color: #40acfd;
 }
-/* line 326, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 article #tab li a#women {
   background-color: #fd407f;
 }
-/* line 330, ../sass/main.scss */
+/* line 331, ../sass/main.scss */
 article #tab li a#tug {
   background-color: #e59702;
 }
-/* line 334, ../sass/main.scss */
+/* line 335, ../sass/main.scss */
 article #tab li a.current {
   padding: 1.5em 3em;
   font-size: 1.5em;
 }
-/* line 342, ../sass/main.scss */
+/* line 343, ../sass/main.scss */
 article .contents {
   margin: 0 3em 5em 3em;
   clear: both;
@@ -350,46 +351,46 @@ article .contents {
   overflow: hidden;
 }
 @media all and (max-width: 1000px) {
-  /* line 342, ../sass/main.scss */
+  /* line 343, ../sass/main.scss */
   article .contents {
     margin: 0 1em 5em 1em;
   }
 }
-/* line 352, ../sass/main.scss */
+/* line 353, ../sass/main.scss */
 article .contents#tabBox1 {
   border-top: #40acfd solid 3px;
 }
-/* line 355, ../sass/main.scss */
+/* line 356, ../sass/main.scss */
 article .contents#tabBox1 caption {
   color: #40acfd;
 }
-/* line 359, ../sass/main.scss */
+/* line 360, ../sass/main.scss */
 article .contents#tabBox1 thead {
   background-color: #40acfd;
   color: #fff;
 }
-/* line 365, ../sass/main.scss */
+/* line 366, ../sass/main.scss */
 article .contents#tabBox2 {
   border-top: #fd407f solid 3px;
 }
-/* line 368, ../sass/main.scss */
+/* line 369, ../sass/main.scss */
 article .contents#tabBox2 caption {
   color: #fd407f;
 }
-/* line 372, ../sass/main.scss */
+/* line 373, ../sass/main.scss */
 article .contents#tabBox2 thead {
   background-color: #fd407f;
   color: #fff;
 }
-/* line 378, ../sass/main.scss */
+/* line 379, ../sass/main.scss */
 article .contents#tabBox3 {
   border-top: #e59702 solid 3px;
 }
-/* line 381, ../sass/main.scss */
+/* line 382, ../sass/main.scss */
 article .contents#tabBox3 caption {
   color: #e59702;
 }
-/* line 385, ../sass/main.scss */
+/* line 386, ../sass/main.scss */
 article .contents#tabBox3 thead {
   background-color: #e59702;
   color: #fff;
