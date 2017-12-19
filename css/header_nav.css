@@ -88,6 +88,10 @@ nav h2 img {
   }
 }
 /* line 77, ../sass/header_nav.scss */
+nav .menu-trigger {
+  display: none;
+}
+/* line 81, ../sass/header_nav.scss */
 nav #global {
   margin-top: 1em;
   color: gray;
@@ -95,7 +99,7 @@ nav #global {
   justify-content: center;
 }
 @media all and (max-width: 1000px) {
-  /* line 77, ../sass/header_nav.scss */
+  /* line 81, ../sass/header_nav.scss */
   nav #global {
     width: 230px;
     margin: 1.5em auto 0 auto;
@@ -103,43 +107,43 @@ nav #global {
     flex-direction: column;
   }
 }
-/* line 90, ../sass/header_nav.scss */
+/* line 94, ../sass/header_nav.scss */
 nav #global li {
   font-weight: bold;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
   margin: 0 2em;
 }
 @media all and (max-width: 1000px) {
-  /* line 90, ../sass/header_nav.scss */
+  /* line 94, ../sass/header_nav.scss */
   nav #global li {
     font-size: 125%;
     margin: 0 0 0.3em 3em;
   }
 }
-/* line 100, ../sass/header_nav.scss */
+/* line 104, ../sass/header_nav.scss */
 nav #global li a {
   color: #0278d2;
   vertical-align: text-bottom;
 }
-/* line 104, ../sass/header_nav.scss */
+/* line 108, ../sass/header_nav.scss */
 nav #global li a span {
   margin-right: 0.5em;
   font-size: 1em;
   text-shadow: none;
 }
-/* line 110, ../sass/header_nav.scss */
+/* line 114, ../sass/header_nav.scss */
 nav #global li a em {
   font-style: normal;
 }
-/* line 114, ../sass/header_nav.scss */
+/* line 118, ../sass/header_nav.scss */
 nav #global li a:hover {
   color: #3daafd;
 }
-/* line 119, ../sass/header_nav.scss */
+/* line 123, ../sass/header_nav.scss */
 nav #global li.cu a {
   color: #3daafd;
 }
-/* line 125, ../sass/header_nav.scss */
+/* line 129, ../sass/header_nav.scss */
 nav.ver2 {
   position: fixed;
   top: 0;
@@ -149,55 +153,91 @@ nav.ver2 {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 0.5em;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
   margin-top: 0;
   transition: margin-top 1s ease 1s;
 }
-/* line 136, ../sass/header_nav.scss */
+/* line 139, ../sass/header_nav.scss */
 nav.ver2 h2 {
   margin: 0;
   width: 20%;
   min-width: 120px;
 }
-/* line 141, ../sass/header_nav.scss */
+/* line 144, ../sass/header_nav.scss */
 nav.ver2 h2 img {
   width: 100%;
   max-width: 200px;
   height: auto;
   margin: 0;
 }
-/* line 149, ../sass/header_nav.scss */
+/* line 152, ../sass/header_nav.scss */
 nav.ver2 .menu-trigger {
-  display: none;
+  cursor: pointer;
+  transition: all .4s;
+  box-sizing: border-box;
+  text-align: right;
 }
 @media all and (max-width: 1000px) {
-  /* line 149, ../sass/header_nav.scss */
+  /* line 152, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger {
-    width: 20%;
-    cursor: pointer;
-    text-align: center;
-    padding: 0.8% 1%;
+    display: block;
+    width: 80%;
+  }
+  /* line 162, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger span {
+    height: 2px;
+    background-color: #0278d2;
+    border-radius: 2px;
+    margin: 0.7em;
+    width: 2.5em;
+    display: block;
+    transition: all .4s;
+    box-sizing: border-box;
+  }
+  /* line 173, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger.on {
+    background: none;
+  }
+  /* line 176, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger.on span:nth-of-type(1) {
+    -webkit-transform: translateY(0.85em) rotate(-315deg);
+    transform: translateY(0.85em) rotate(-315deg);
+  }
+  /* line 181, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger.on span:nth-of-type(2) {
+    opacity: 0;
+  }
+  /* line 185, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger.on span:nth-of-type(3) {
+    -webkit-transform: translateY(-0.85em) rotate(315deg);
+    transform: translateY(-0.85em) rotate(315deg);
+  }
+  /* line 191, ../sass/header_nav.scss */
+  nav.ver2 .menu-trigger i {
+    font-size: 1.25em;
+    display: block;
+    margin: -2em 0 0 -7em;
   }
 }
-/* line 160, ../sass/header_nav.scss */
+/* line 199, ../sass/header_nav.scss */
 nav.ver2 #global {
   justify-content: flex-end;
   width: 80%;
 }
 @media all and (max-width: 1000px) {
-  /* line 160, ../sass/header_nav.scss */
+  /* line 199, ../sass/header_nav.scss */
   nav.ver2 #global {
     display: none;
+    width: 100%;
   }
 }
 @media all and (max-width: 1000px) {
-  /* line 169, ../sass/header_nav.scss */
+  /* line 209, ../sass/header_nav.scss */
   nav.ver2 #global li em {
     display: none;
   }
 }
-/* line 176, ../sass/header_nav.scss */
+/* line 216, ../sass/header_nav.scss */
 nav #prev {
   position: fixed;
   top: 40%;
@@ -208,17 +248,17 @@ nav #prev {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 183, ../sass/header_nav.scss */
+/* line 223, ../sass/header_nav.scss */
 nav #prev:hover {
   color: #0278d2;
 }
 @media all and (max-width: 1000px) {
-  /* line 176, ../sass/header_nav.scss */
+  /* line 216, ../sass/header_nav.scss */
   nav #prev {
     display: none;
   }
 }
-/* line 192, ../sass/header_nav.scss */
+/* line 232, ../sass/header_nav.scss */
 nav #next {
   position: fixed;
   top: 50%;
@@ -228,12 +268,12 @@ nav #next {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 198, ../sass/header_nav.scss */
+/* line 238, ../sass/header_nav.scss */
 nav #next:hover {
   color: #0278d2;
 }
 @media all and (max-width: 1000px) {
-  /* line 192, ../sass/header_nav.scss */
+  /* line 232, ../sass/header_nav.scss */
   nav #next {
     display: none;
   }

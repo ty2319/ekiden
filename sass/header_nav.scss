@@ -74,6 +74,10 @@ nav {
 		}
 	}
 	
+	.menu-trigger {
+		display: none;
+	}
+	
 	#global {
 		margin-top		: 1em;
 		color			: lighten($black , 50%);
@@ -128,14 +132,13 @@ nav {
 		background-color: $back;
 		padding			: 0.5em;
 		display			: flex;
-		justify-content	: space-between;
-		align-items		: center;
+		flex-wrap		: wrap;
 		margin-top		: 0;
 		transition		: margin-top 1s ease 1s;
 		
 		h2 {
 			margin	 : 0;
-			width	 : $max / 5;
+			width	 : $max * 0.2;
 			min-width: 120px;
 			
 			img {
@@ -145,15 +148,51 @@ nav {
 				margin	 : 0;
 			}
 		}
-	
+			
 		.menu-trigger {
-			display: none;
+			cursor		: pointer;
+			transition	: all .4s;
+			box-sizing	: border-box;
+			text-align	: right;
 			
 			@include media($sv) {
-				width		: $max / 5;
-				cursor		: pointer;
-				text-align	: center;
-				padding		: $max*0.008 $max*0.01;
+				display	: block;
+				width	: $max * 0.8;
+							
+				span {
+					height			: 2px;
+					background-color: $blue;
+					border-radius	: 2px;
+					margin			: 0.7em;
+					width			: 2.5em;
+					display			: block;
+					transition		: all .4s;
+					box-sizing		: border-box;
+				}
+				
+				&.on {
+					background: none;
+					
+					span:nth-of-type(1) {
+						-webkit-transform: translateY(0.85em) rotate(-315deg);
+						transform: translateY(0.85em) rotate(-315deg);
+					}
+					
+					span:nth-of-type(2) {
+						opacity: 0;
+					}
+					
+					span:nth-of-type(3) {
+						-webkit-transform: translateY(-0.85em) rotate(315deg);
+						transform		 : translateY(-0.85em) rotate(315deg);
+					}
+				}
+				
+				i {
+					font-size: 1.25em;
+					display	 : block;
+					margin	 : -2em 0 0 -7em;
+				}
 			}
 		}
 		
@@ -162,7 +201,8 @@ nav {
 			width			: $max * 0.8;
 			
 			@include media($sv) {
-				display: none;
+				display	: none;
+				width	: $max;
 			}
 			
 			@include media($th) {
