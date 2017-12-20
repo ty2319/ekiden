@@ -5,10 +5,11 @@
 
 body {
 	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-	color: lighten($black, 30%);
-	width: $max;
-	font-size: 16px;
-	line-height: 1.75em;
+	color		: lighten($black, 30%);
+	width		: $max;
+	font-size	: 16px;
+	line-height	: 1.75em;
+	overflow-x	: hiden;
 	
 	@include media($th) {
 		font-size: 0.875rem;

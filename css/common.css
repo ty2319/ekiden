@@ -7,6 +7,7 @@ body {
   width: 100%;
   font-size: 16px;
   line-height: 1.75em;
+  overflow-x: hiden;
 }
 @media all and (max-width: 1000px) {
   /* line 6, ../sass/common.scss */
@@ -20,18 +21,24 @@ body {
     font-size: 0.75rem;
   }
 }
+@media all and (max-width: 700px) {
+  /* line 6, ../sass/common.scss */
+  body {
+    font-size: 0.625rem;
+  }
+}
 @media all and (max-width: 1000px) {
   /* line 6, ../sass/common.scss */
   body {
     font-size: 0.625rem;
   }
 }
-/* line 25, ../sass/common.scss */
+/* line 26, ../sass/common.scss */
 body a {
   color: #0278d2;
   text-decoration: none;
 }
-/* line 30, ../sass/common.scss */
+/* line 31, ../sass/common.scss */
 body img {
   border: none;
   line-height: 100%;

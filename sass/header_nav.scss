@@ -37,7 +37,7 @@ header {
 			width : 10em;
 		}
 	
-		@include media($sv) {
+		@include media($nf) {
 			font-size	: 2em;
 			line-height : $max *1.25;
 		}
@@ -60,7 +60,7 @@ nav {
 	margin-top	: -4em;
 	text-align	: center;
 	
-	@include media($sv) {
+	@include media($nf) {
 		margin-top: -10em;
 	}
 	
@@ -68,7 +68,7 @@ nav {
 		width : 461px;
 		height: 142px;
 		
-		@include media($sv) {
+		@include media($nf) {
 			width: 230px;
 			height: 71px;
 		}
@@ -84,7 +84,7 @@ nav {
 		display			: flex;
 		justify-content	: center;
 		
-		@include media($sv) {
+		@include media($nf) {
 			width			: 230px;
 			margin			: 1.5em auto 0 auto;
 			text-align		: left;
@@ -96,7 +96,7 @@ nav {
 			text-shadow	: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 			margin		: 0 2em;
 			
-			@include media($sv) {
+			@include media($nf) {
 				font-size: $max * 1.25;
     			margin	 : 0 0 0.3em 3em;
 			}
@@ -132,50 +132,53 @@ nav {
 		background-color: $back;
 		padding			: 0.5em;
 		display			: flex;
+		justify-content	: space-between;
+		align-items		: center;
 		flex-wrap		: wrap;
 		margin-top		: 0;
 		transition		: margin-top 1s ease 1s;
 		
 		h2 {
-			margin	 : 0;
-			width	 : $max * 0.2;
-			min-width: 120px;
+			margin	  : 0;
+			width	  : $max * 0.2;
+			min-width : 180px;
+			text-align: left;
 			
 			img {
 				width	 : $max;
-				max-width: 200px;
+				max-width: 180px;
 				height	 : auto;
 				margin	 : 0;
 			}
 		}
 			
-		.menu-trigger {
-			cursor		: pointer;
-			transition	: all .4s;
-			box-sizing	: border-box;
-			text-align	: right;
+		@include media($nf) {
 			
-			@include media($sv) {
-				display	: block;
-				width	: $max * 0.8;
+			h2 {
+				width: $max * 0.9;
+			}
+			
+			.menu-trigger {
+				display		: block;
+				cursor		: pointer;
+				box-sizing	: border-box;
+				width		: $max * 0.1;
 							
 				span {
-					height			: 2px;
+					height			: 3px;
 					background-color: $blue;
-					border-radius	: 2px;
+					border-radius	: 3px;
 					margin			: 0.7em;
-					width			: 2.5em;
+					width			: 3em;
 					display			: block;
 					transition		: all .4s;
 					box-sizing		: border-box;
 				}
 				
 				&.on {
-					background: none;
 					
 					span:nth-of-type(1) {
-						-webkit-transform: translateY(0.85em) rotate(-315deg);
-						transform: translateY(0.85em) rotate(-315deg);
+						transform: translateY(0.99em) rotate(-315deg);
 					}
 					
 					span:nth-of-type(2) {
@@ -183,8 +186,7 @@ nav {
 					}
 					
 					span:nth-of-type(3) {
-						-webkit-transform: translateY(-0.85em) rotate(315deg);
-						transform		 : translateY(-0.85em) rotate(315deg);
+						transform: translateY(-0.99em) rotate(315deg);
 					}
 				}
 				
@@ -197,18 +199,13 @@ nav {
 		}
 		
 		#global {
+			display			: flex;
 			justify-content	: flex-end;
 			width			: $max * 0.8;
 			
-			@include media($sv) {
+			@include media($nf) {
 				display	: none;
 				width	: $max;
-			}
-			
-			@include media($th) {
-				li em {
-					display: none;
-				}
 			}
 		}
 	}
@@ -224,7 +221,7 @@ nav {
 			color: $blue;
 		}
 		
-		@include media($sv) {
+		@include media($nf) {
 			display: none;
 		}
 	}
@@ -239,7 +236,7 @@ nav {
 			color: $blue;
 		}
 		
-		@include media($sv) {
+		@include media($nf) {
 			display: none;
 		}
 	}

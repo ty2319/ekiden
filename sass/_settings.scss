@@ -93,6 +93,12 @@ $ip: '../img/';
 //media query ---------------------
  
 @mixin media($mediaSize) {
+  @if $mediaSize <= $sv{
+    @media all and (max-width: $sv) {
+      @content
+    }
+  }
+  
   @if $mediaSize <= $th{
     @media all and (max-width: $th) {
       @content
