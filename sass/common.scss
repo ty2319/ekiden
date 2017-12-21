@@ -3,34 +3,37 @@
 
 @import "settings";
 
-body {
-	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-	color		: lighten($black, 30%);
-	width		: $max;
-	font-size	: 16px;
-	line-height	: 1.75em;
-	overflow-x	: hiden;
-	
-	@include media($th) {
-		font-size: 0.875rem;
-	}
-	
-	@include media($of) {
-		font-size: 0.75rem;
-	}
-	
-	@include media($sv) {
-		font-size: 0.625rem;
-	}
-
-	a {
-		color			: $blue;
-		text-decoration	: none;
-	}
-	
-	img {
-		border			: none;
-		line-height		: $max;
-		vertical-align	: bottom;
+html {
+  overflow: auto;
+  
+	  body {
+		font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+		color		: lighten($black, 30%);
+		width		: $max;
+		font-size	: 16px;
+		line-height	: 1.75em;
+		
+		@include media($of) {
+			font-size: 0.875rem;
+		}
+		
+		@include media($th) {
+			font-size: 0.75rem;
+		}
+		
+		@include media($fv) {
+			font-size: 0.625rem;
+		}
+		
+		a {
+			color			: $blue;
+			text-decoration	: none;
+		}
+		
+		img {
+			border			: none;
+			line-height		: $max;
+			vertical-align	: bottom;
+		}
 	}
 }

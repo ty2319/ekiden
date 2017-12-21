@@ -37,7 +37,7 @@ header {
 			width : 10em;
 		}
 	
-		@include media($nf) {
+		@include media($th) {
 			font-size	: 2em;
 			line-height : $max *1.25;
 		}
@@ -60,7 +60,7 @@ nav {
 	margin-top	: -4em;
 	text-align	: center;
 	
-	@include media($nf) {
+	@include media($th) {
 		margin-top: -10em;
 	}
 	
@@ -68,7 +68,7 @@ nav {
 		width : 461px;
 		height: 142px;
 		
-		@include media($nf) {
+		@include media($fv) {
 			width: 230px;
 			height: 71px;
 		}
@@ -84,7 +84,7 @@ nav {
 		display			: flex;
 		justify-content	: center;
 		
-		@include media($nf) {
+		@include media($sv) {
 			width			: 230px;
 			margin			: 1.5em auto 0 auto;
 			text-align		: left;
@@ -96,7 +96,7 @@ nav {
 			text-shadow	: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 			margin		: 0 2em;
 			
-			@include media($nf) {
+			@include media($fv) {
 				font-size: $max * 1.25;
     			margin	 : 0 0 0.3em 3em;
 			}
@@ -151,18 +151,24 @@ nav {
 				margin	 : 0;
 			}
 		}
+		
+		#global {
+			display			: flex;
+			justify-content	: flex-end;
+			width			: $max * 0.8;
+		}
 			
-		@include media($nf) {
+		@include media($th) {
 			
 			h2 {
-				width: $max * 0.9;
+				width: $max * 0.88;
 			}
 			
 			.menu-trigger {
 				display		: block;
 				cursor		: pointer;
 				box-sizing	: border-box;
-				width		: $max * 0.1;
+				width		: $max * 0.12;
 							
 				span {
 					height			: 3px;
@@ -193,19 +199,22 @@ nav {
 				i {
 					font-size: 1.25em;
 					display	 : block;
-					margin	 : -2em 0 0 -7em;
+					margin	 : -2em 0 0 -10em;
+					
+					@include media($fv) {
+						display: none;
+					}
 				}
 			}
-		}
-		
-		#global {
-			display			: flex;
-			justify-content	: flex-end;
-			width			: $max * 0.8;
 			
-			@include media($nf) {
-				display	: none;
-				width	: $max;
+			#global {
+				display			: none;
+				width			: $max;
+				flex-direction	: row;
+					
+				@include media($sv) {
+					flex-direction: column;
+				}
 			}
 		}
 	}
@@ -221,7 +230,7 @@ nav {
 			color: $blue;
 		}
 		
-		@include media($nf) {
+		@include media($fv) {
 			display: none;
 		}
 	}
@@ -236,7 +245,7 @@ nav {
 			color: $blue;
 		}
 		
-		@include media($nf) {
+		@include media($fv) {
 			display: none;
 		}
 	}

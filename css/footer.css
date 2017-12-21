@@ -1,18 +1,14 @@
 /* CSS Document */
 /* line 6, ../sass/footer.scss */
 footer, footer a {
-  color: #fff;
+  color: #fff !important;
   background-color: #0278d2;
 }
 /* line 10, ../sass/footer.scss */
 footer ul, footer a ul {
   margin: 0 auto;
-  padding: 1.5em 0;
-}
-/* line 15, ../sass/footer.scss */
-footer small, footer a small {
-  display: block;
-  text-align: right;
-  font-size: 0.9em;
-  margin-top: -1.8em;
+  padding: 1.5em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 90%;
 }

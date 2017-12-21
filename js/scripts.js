@@ -1,6 +1,8 @@
 (function($) {
 		
-	var cnt = true;
+	var cnt		= true,
+		visit	= 0,
+		visited = 0;
 	
 	header = function() {
 		
@@ -95,70 +97,62 @@
 	},
 	
 	nav = function() {	
-		
+	
 		$(window).scroll(function(){
 			if ($(window).scrollTop() > $(window).height() / 1.5) {
 				$('nav').addClass('ver2');
 				$('h2 img').attr('src' , 'img/logo2.png');
-			
-				if ($(window).width() <= 940) {
+	
+				if ($(window).width() <= 1000) {
 					$('#global').hide();
 				} else {
 					$('#global').show().css('display' , 'flex');
 				}
-					
-				$('.menu-trigger:not(.on)').hover(function() {
-					$('#global').slideDown(500);
-					$(this).addClass('on');
-					$('i' , this).text('close');
-					$('.menu-trigger .new').hide();
-				} , function() {
-					
-					$('#global').hover(function() {
-						$(this).show();
-						$('.menu-trigger i').text('close');
-					} , function() {
-						$('#global').slideUp(500);
-						$('.menu-trigger').removeClass('on');
-						$('.menu-trigger i').text('menu');
-						$('.menu-trigger .new').show();
-					});
-				});
-				
-				$('.menu-trigger').on('click' , function() {
-					$('#global').slideToggle(500);
-					$(this).toggleClass('on');
-					$('#global').nextAll().toggleClass('menu_open');
-					
-					if ($('i' , this).text() == 'close'){
-						$('i' , this).text('menu');
-						$('.menu-trigger .new').show();
-				   } else {
-					   $('i' , this).text('close');
-						$('.menu-trigger .new').hide();
-				   }
-				});					
 			} else {
 				$('nav').removeClass('ver2');
 				$('h2 img').attr('src' , 'img/logo.png');
 				$('#global').show().css('display' , 'flex');
 			}
 		});
-
-		if ($(window).scrollTop() > $(window).height() / 1.5) {
-			if ($(window).width() <= 940) {
-				$('#global').hide();
-			} else {
-				$('#global').show().css('display' , 'flex');
-			}
-		}
+			
+		$('.menu-trigger:not(.on)').hover(function() {
+			$('#global').slideDown(500);
+			$(this).addClass('on');
+			$('i' , this).text('close');
+			$('.menu-trigger .new').hide();
+		} , function() {
+			
+			$('#global').hover(function() {
+				$(this).show();
+				$('.menu-trigger i').text('close');
+			} , function() {
+				$('#global').slideUp(500);
+				$('.menu-trigger').removeClass('on');
+				$('.menu-trigger i').text('menu');
+				$('.menu-trigger .new').show();
+			});
+		});
+		
+		$('.menu-trigger').on('click' , function() {
+			$('#global').slideToggle(500);
+			$(this).toggleClass('on');
+			
+			if ($('i' , this).text() == 'close'){
+				$('i' , this).text('menu');
+				$('.menu-trigger .new').show();
+		   } else {
+			   $('i' , this).text('close');
+				$('.menu-trigger .new').hide();
+		   }
+		});					
 	},
 	
 	// SmoothScroll
 	smoothScroll = function() {
 		$('a[href^=#]:not(#tab a)').click(function(){
 			$('html, body').animate({scrollTop : $($(this).attr('href')).offset().top}, 500, "swing");
-			$('.menu-trigger')
+			$('.menu-trigger').removeClass('on');
+			$(this).children('.new').remove();
 			return false;
 		});
 		
@@ -210,11 +204,38 @@
 		
 		//ナビの処理
 		function changeBox(secNum) {
+			
+			$.getJSON('/symbol/ekiden/js/update.json').done(function(json, status, request) {
+			
+			
+			$(json).each(function(i, data) {
+				
+				var elem	= data.class, // class
+					date	= new Date(),
+					date2	= (visit.getMonth() + 1) + "." + visit.getDate(); + "." + visit.getHours(),
+					date3	= data.date;
+		
+				if (date3 < date2) { // 今日(today)がago(更新日 + 5日)より前なら
+					if ($.cookie('visit' + elem + '.html') == null || $.cookie('visit' + elem + '.html') < data.date) {
+						$('#global').find(elem).not('.index').append('<span class="new">N</span>'); // クラス「new」を付ける
+					}
+				} else {
+					$.cookie('visit' + elem + '.html' , null);						
+				}
+				
+				cnt = $('#global dd').find('.new').length;
+			});
+		
+			if (cnt > 0) {
+				$('.menu-trigger').append('<span class="new">' + cnt + '</span>');
+			}		
+		});
 			if(secNum != current) {
 				current = secNum;
 				secNum2 = secNum + 1;
 				$('#global li').removeClass('cu');
-				$('#global li:nth-child(' + secNum2 +')').addClass('cu');
+				$('#global li:nth-child(' + secNum2 +')').addClass('cu').children('.new').remove();
+				$.cookie(secNum2 , date3);
 			}
 		}
 	}

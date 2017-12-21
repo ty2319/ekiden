@@ -2,9 +2,9 @@
 
 $max: 100%;
 
-$sv: 700px;
+$fv: 500px;
 
-$nf: 940px;
+$sv: 700px;
 
 $th: 1000px;
 
@@ -93,19 +93,26 @@ $ip: '../img/';
 //media query ---------------------
  
 @mixin media($mediaSize) {
-  @if $mediaSize <= $sv{
+	
+  @if $mediaSize <= $fv {
+    @media all and (max-width: $fv) {
+      @content
+    }
+  }
+  
+  @else if $mediaSize <= $sv {
     @media all and (max-width: $sv) {
       @content
     }
   }
   
-  @if $mediaSize <= $th{
+  @else if $mediaSize <= $th {
     @media all and (max-width: $th) {
       @content
     }
   }
   
-  @else if $mediaSize <= $of{
+  @else if $mediaSize <= $of {
     @media all and (max-width: $of) {
       @content
     }

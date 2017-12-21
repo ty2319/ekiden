@@ -84,13 +84,7 @@ article > section {
   padding: 5em 5%;
   width: 50%;
 }
-@media all and (max-width: 700px) {
-  /* line 84, ../sass/main.scss */
-  article > section {
-    padding: 3em 1em;
-  }
-}
-@media all and (max-width: 1000px) {
+@media all and (max-width: 500px) {
   /* line 84, ../sass/main.scss */
   article > section {
     padding: 3em 1em;
@@ -306,13 +300,7 @@ article #tab {
   display: flex;
   align-items: flex-end;
 }
-@media all and (max-width: 700px) {
-  /* line 298, ../sass/main.scss */
-  article #tab {
-    margin: 3em 1em 0 1em;
-  }
-}
-@media all and (max-width: 1000px) {
+@media all and (max-width: 500px) {
   /* line 298, ../sass/main.scss */
   article #tab {
     margin: 3em 1em 0 1em;
@@ -332,13 +320,7 @@ article #tab li a {
   cursor: pointer;
   font-weight: bold;
 }
-@media all and (max-width: 700px) {
-  /* line 310, ../sass/main.scss */
-  article #tab li a {
-    margin-left: 0.5em;
-  }
-}
-@media all and (max-width: 1000px) {
+@media all and (max-width: 500px) {
   /* line 310, ../sass/main.scss */
   article #tab li a {
     margin-left: 0.5em;
@@ -368,13 +350,7 @@ article .contents {
   width: 100%;
   overflow: hidden;
 }
-@media all and (max-width: 700px) {
-  /* line 343, ../sass/main.scss */
-  article .contents {
-    margin: 0 1em 5em 1em;
-  }
-}
-@media all and (max-width: 1000px) {
+@media all and (max-width: 500px) {
   /* line 343, ../sass/main.scss */
   article .contents {
     margin: 0 1em 5em 1em;
