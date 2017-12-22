@@ -1,8 +1,9 @@
 (function($) {
 		
 	var cnt		= true,
-		visit	= 0,
-		visited = 0;
+		ncnt	= 0,
+		date	= new Date(),
+		date2	= date.getFullYear() + "." +(date.getMonth() + 1) + date.getDate(); + date.getHours();
 	
 	header = function() {
 		
@@ -57,9 +58,9 @@
 		$('.bottomslide').each(function() {
 			
 			var elmB	= $(this),
-			ultB		= elmB.find('ul:first'),
-			cntB		= ultB.find('li').length,
-			hgtB		= cntB * 100;
+				ultB		= elmB.find('ul:first'),
+				cntB		= ultB.find('li').length,
+				hgtB		= cntB * 100;
 			
 			if (hgtB < $(window).height()) {
 				ultB.clone().prependTo(elmB);
@@ -80,6 +81,30 @@
 		$('header , article').addClass('box');
 		$('section ul li a').append('<i class="fa fa-angle-double-down fa-2x">');
 		$('dd a:not(#info a,#news a) , #info > a').append(' ≫');
+		
+		$.getJSON('/symbol/ekiden/js/update.json').done(function(json, status, request) {
+			
+			
+			$(json).each(function(i, data) {
+				
+				var elem	= data.id,
+					date3	= data.date;
+		
+				if (date3 > date2) {
+					if ($.cookie(elem) == null || $.cookie(elem) < date3) {
+						$('#global').find('a[href="elem"]').append('<span class="new">N</span>'); // クラス「new」を付ける
+					}
+				} else {
+					$.cookie(elem , null);						
+				}
+				
+				ncnt = $('#global').find('.new').length;
+			});
+		
+			if (ncnt > 0) {
+				$('.menu-trigger').append('<span class="new">' + ncnt + '</span>');
+			}		
+		});
 	},
 	
 	tab = function() {
@@ -153,6 +178,11 @@
 			$('html, body').animate({scrollTop : $($(this).attr('href')).offset().top}, 500, "swing");
 			$('.menu-trigger').removeClass('on');
 			$(this).children('.new').remove();
+			
+			if ($(window).width() >= 1000) {
+				$('#global').show().css('display' , 'flex');
+			}
+			
 			return false;
 		});
 		
@@ -165,7 +195,7 @@
 			$('.box').each(function(i) {
 				boxTop[i] = $(this).offset().top - 1;
 				
-				if ($('section#2').outerHeight() < $(window).height()) {
+				if ($('article#2').outerHeight() < $(window).height()) {
 					boxTop[i] = boxTop[i] - 230
 				}
 				
@@ -182,6 +212,7 @@
 		$(window).scroll(function(){
 			for (var i = boxTop.length - 1 ; i >= 0; i--) {
 				if ($(window).scrollTop() >= boxTop[i]) {
+				
 					if (i != 0) {
 						$('#prev').fadeIn();
 					} else {
@@ -205,37 +236,13 @@
 		//ナビの処理
 		function changeBox(secNum) {
 			
-			$.getJSON('/symbol/ekiden/js/update.json').done(function(json, status, request) {
-			
-			
-			$(json).each(function(i, data) {
-				
-				var elem	= data.class, // class
-					date	= new Date(),
-					date2	= (visit.getMonth() + 1) + "." + visit.getDate(); + "." + visit.getHours(),
-					date3	= data.date;
-		
-				if (date3 < date2) { // 今日(today)がago(更新日 + 5日)より前なら
-					if ($.cookie('visit' + elem + '.html') == null || $.cookie('visit' + elem + '.html') < data.date) {
-						$('#global').find(elem).not('.index').append('<span class="new">N</span>'); // クラス「new」を付ける
-					}
-				} else {
-					$.cookie('visit' + elem + '.html' , null);						
-				}
-				
-				cnt = $('#global dd').find('.new').length;
-			});
-		
-			if (cnt > 0) {
-				$('.menu-trigger').append('<span class="new">' + cnt + '</span>');
-			}		
-		});
 			if(secNum != current) {
 				current = secNum;
 				secNum2 = secNum + 1;
 				$('#global li').removeClass('cu');
 				$('#global li:nth-child(' + secNum2 +')').addClass('cu').children('.new').remove();
-				$.cookie(secNum2 , date3);
+				$.cookie('#' +  secNum2 , date2);
+				ncnt = ncnt - 1;
 			}
 		}
 	}

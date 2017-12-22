@@ -75,7 +75,22 @@ nav {
 	}
 	
 	.menu-trigger {
-		display: none;
+		display : none;
+		position: $r;
+	}
+	
+	.new {
+		@include abR(0.4em,0,1);
+		width			: 1.5em;
+		height			: 1.5em;
+		font-size		: 0.75em;
+		font-weight		: normal;
+		text-align		: center;
+		line-height		: 0.8em;
+		color			: $white;
+		background-color: #F00 !important;
+		border-radius	: 1.5em !important;
+		padding-top		: 0.4em !important;
 	}
 	
 	#global {
@@ -95,6 +110,7 @@ nav {
 			font-weight	: bold;
 			text-shadow	: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 			margin		: 0 2em;
+			position	: $r;
 			
 			@include media($fv) {
 				font-size: $max * 1.25;
@@ -102,8 +118,10 @@ nav {
 			}
 			
 			a {
-				color: $blue;
-				vertical-align: text-bottom;
+				color	: $blue;
+				display	: block;
+				position: $r;
+				
 				
 				span {
 					margin-right: 0.5em;

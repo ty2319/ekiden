@@ -49,6 +49,13 @@ $back: rgba(#FFF,0.7);
 	z-index: $z;
 }
 
+@mixin abR($top,$right,$z) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	z-index: $z;
+}
+
 @mixin abB($bottom,$right,$z) {
 	position: absolute;
 	bottom: $bottom;

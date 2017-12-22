@@ -90,8 +90,26 @@ nav h2 img {
 /* line 77, ../sass/header_nav.scss */
 nav .menu-trigger {
   display: none;
+  position: relative;
 }
-/* line 81, ../sass/header_nav.scss */
+/* line 82, ../sass/header_nav.scss */
+nav .new {
+  position: absolute;
+  top: 0.4em;
+  right: 0;
+  z-index: 1;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 0.75em;
+  font-weight: normal;
+  text-align: center;
+  line-height: 0.8em;
+  color: #fff;
+  background-color: #F00 !important;
+  border-radius: 1.5em !important;
+  padding-top: 0.4em !important;
+}
+/* line 96, ../sass/header_nav.scss */
 nav #global {
   margin-top: 1em;
   color: gray;
@@ -99,7 +117,7 @@ nav #global {
   justify-content: center;
 }
 @media all and (max-width: 700px) {
-  /* line 81, ../sass/header_nav.scss */
+  /* line 96, ../sass/header_nav.scss */
   nav #global {
     width: 230px;
     margin: 1.5em auto 0 auto;
@@ -107,43 +125,45 @@ nav #global {
     flex-direction: column;
   }
 }
-/* line 94, ../sass/header_nav.scss */
+/* line 109, ../sass/header_nav.scss */
 nav #global li {
   font-weight: bold;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
   margin: 0 2em;
+  position: relative;
 }
 @media all and (max-width: 500px) {
-  /* line 94, ../sass/header_nav.scss */
+  /* line 109, ../sass/header_nav.scss */
   nav #global li {
     font-size: 125%;
     margin: 0 0 0.3em 3em;
   }
 }
-/* line 104, ../sass/header_nav.scss */
+/* line 120, ../sass/header_nav.scss */
 nav #global li a {
   color: #0278d2;
-  vertical-align: text-bottom;
+  display: block;
+  position: relative;
 }
-/* line 108, ../sass/header_nav.scss */
+/* line 126, ../sass/header_nav.scss */
 nav #global li a span {
   margin-right: 0.5em;
   font-size: 1em;
   text-shadow: none;
 }
-/* line 114, ../sass/header_nav.scss */
+/* line 132, ../sass/header_nav.scss */
 nav #global li a em {
   font-style: normal;
 }
-/* line 118, ../sass/header_nav.scss */
+/* line 136, ../sass/header_nav.scss */
 nav #global li a:hover {
   color: #3daafd;
 }
-/* line 123, ../sass/header_nav.scss */
+/* line 141, ../sass/header_nav.scss */
 nav #global li.cu a {
   color: #3daafd;
 }
-/* line 129, ../sass/header_nav.scss */
+/* line 147, ../sass/header_nav.scss */
 nav.ver2 {
   position: fixed;
   top: 0;
@@ -159,39 +179,39 @@ nav.ver2 {
   margin-top: 0;
   transition: margin-top 1s ease 1s;
 }
-/* line 141, ../sass/header_nav.scss */
+/* line 159, ../sass/header_nav.scss */
 nav.ver2 h2 {
   margin: 0;
   width: 20%;
   min-width: 180px;
   text-align: left;
 }
-/* line 147, ../sass/header_nav.scss */
+/* line 165, ../sass/header_nav.scss */
 nav.ver2 h2 img {
   width: 100%;
   max-width: 180px;
   height: auto;
   margin: 0;
 }
-/* line 155, ../sass/header_nav.scss */
+/* line 173, ../sass/header_nav.scss */
 nav.ver2 #global {
   display: flex;
   justify-content: flex-end;
   width: 80%;
 }
 @media all and (max-width: 1000px) {
-  /* line 163, ../sass/header_nav.scss */
+  /* line 181, ../sass/header_nav.scss */
   nav.ver2 h2 {
     width: 88%;
   }
-  /* line 167, ../sass/header_nav.scss */
+  /* line 185, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger {
     display: block;
     cursor: pointer;
     box-sizing: border-box;
     width: 12%;
   }
-  /* line 173, ../sass/header_nav.scss */
+  /* line 191, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger span {
     height: 3px;
     background-color: #0278d2;
@@ -202,19 +222,19 @@ nav.ver2 #global {
     transition: all .4s;
     box-sizing: border-box;
   }
-  /* line 186, ../sass/header_nav.scss */
+  /* line 204, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger.on span:nth-of-type(1) {
     transform: translateY(0.99em) rotate(-315deg);
   }
-  /* line 190, ../sass/header_nav.scss */
+  /* line 208, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger.on span:nth-of-type(2) {
     opacity: 0;
   }
-  /* line 194, ../sass/header_nav.scss */
+  /* line 212, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger.on span:nth-of-type(3) {
     transform: translateY(-0.99em) rotate(315deg);
   }
-  /* line 199, ../sass/header_nav.scss */
+  /* line 217, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger i {
     font-size: 1.25em;
     display: block;
@@ -222,13 +242,13 @@ nav.ver2 #global {
   }
 }
 @media all and (max-width: 1000px) and (max-width: 500px) {
-  /* line 199, ../sass/header_nav.scss */
+  /* line 217, ../sass/header_nav.scss */
   nav.ver2 .menu-trigger i {
     display: none;
   }
 }
 @media all and (max-width: 1000px) {
-  /* line 210, ../sass/header_nav.scss */
+  /* line 228, ../sass/header_nav.scss */
   nav.ver2 #global {
     display: none;
     width: 100%;
@@ -236,13 +256,13 @@ nav.ver2 #global {
   }
 }
 @media all and (max-width: 1000px) and (max-width: 700px) {
-  /* line 210, ../sass/header_nav.scss */
+  /* line 228, ../sass/header_nav.scss */
   nav.ver2 #global {
     flex-direction: column;
   }
 }
 
-/* line 222, ../sass/header_nav.scss */
+/* line 240, ../sass/header_nav.scss */
 nav #prev {
   position: fixed;
   top: 40%;
@@ -253,17 +273,17 @@ nav #prev {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 229, ../sass/header_nav.scss */
+/* line 247, ../sass/header_nav.scss */
 nav #prev:hover {
   color: #0278d2;
 }
 @media all and (max-width: 500px) {
-  /* line 222, ../sass/header_nav.scss */
+  /* line 240, ../sass/header_nav.scss */
   nav #prev {
     display: none;
   }
 }
-/* line 238, ../sass/header_nav.scss */
+/* line 256, ../sass/header_nav.scss */
 nav #next {
   position: fixed;
   top: 50%;
@@ -273,12 +293,12 @@ nav #next {
   cursor: pointer;
   text-shadow: #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px;
 }
-/* line 244, ../sass/header_nav.scss */
+/* line 262, ../sass/header_nav.scss */
 nav #next:hover {
   color: #0278d2;
 }
 @media all and (max-width: 500px) {
-  /* line 238, ../sass/header_nav.scss */
+  /* line 256, ../sass/header_nav.scss */
   nav #next {
     display: none;
   }
