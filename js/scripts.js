@@ -1,9 +1,7 @@
 (function($) {
 		
 	var cnt		= true,
-		ncnt	= 0,
-		date	= new Date(),
-		date2	= date.getFullYear() + "." +(date.getMonth() + 1) + date.getDate(); + date.getHours();
+		ncnt	= 0;
 	
 	header = function() {
 		
@@ -84,19 +82,24 @@
 		
 		$.getJSON('/symbol/ekiden/js/update.json').done(function(json, status, request) {
 			
-			
 			$(json).each(function(i, data) {
 				
 				var elem	= data.id,
-					date3	= data.date;
-		
-				if (date3 > date2) {
-					if ($.cookie(elem) == null || $.cookie(elem) < date3) {
-						$('#global').find('a[href="elem"]').append('<span class="new">N</span>'); // クラス「new」を付ける
+					date	= data.date,
+					str		= date.split('/'),
+					month	= str[str.length-3],
+			 		day		= str[str.length-2],
+					hour	= str[str.length-1],
+					today	= new Date( $.now() ),
+					month2	= (today.getMonth() + 1),
+					day2	= (today.getDate()),
+					hour2	= (today.getHours());
+				
+					if (month == month2 && day == day2 || !$.cookie(i , 'visited') || $.cookie(i) == null) {
+						$('#global').find('a[href="' + elem + '"]').append('<span class="new">N</span>');
+					} else if (day != day2 && $.cookie(i , 'visited')) {
+						$.cookie(i) = null;
 					}
-				} else {
-					$.cookie(elem , null);						
-				}
 				
 				ncnt = $('#global').find('.new').length;
 			});
@@ -241,8 +244,8 @@
 				secNum2 = secNum + 1;
 				$('#global li').removeClass('cu');
 				$('#global li:nth-child(' + secNum2 +')').addClass('cu').children('.new').remove();
-				$.cookie('#' +  secNum2 , date2);
-				ncnt = ncnt - 1;
+				$('.menu-trigger').append('<span class="new">' + (ncnt - 1) + '</span>');
+				$.cookie(secNum2 , 'visited');
 			}
 		}
 	}
