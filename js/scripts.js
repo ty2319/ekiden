@@ -1,7 +1,11 @@
 (function($) {
 		
 	var cnt		= true,
-		ncnt	= 0;
+		ncnt	= 0,
+		today	= new Date( $.now() ),
+		month2	= (today.getMonth() + 1),
+		day2	= (today.getDate()),
+		hour2	= (today.getHours());
 	
 	header = function() {
 		
@@ -89,16 +93,12 @@
 					str		= date.split('/'),
 					month	= str[str.length-3],
 			 		day		= str[str.length-2],
-					hour	= str[str.length-1],
-					today	= new Date( $.now() ),
-					month2	= (today.getMonth() + 1),
-					day2	= (today.getDate()),
-					hour2	= (today.getHours());
+			 		hour	= str[str.length-1];
 				
-					if (month == month2 && day == day2 || !$.cookie(i , 'visited') || $.cookie(i) == null) {
+					if (month == month2 && day == day2 && ($.cookie(i , null) || $.cookie(i) < hour)) {
 						$('#global').find('a[href="' + elem + '"]').append('<span class="new">N</span>');
-					} else if (day != day2 && $.cookie(i , 'visited')) {
-						$.cookie(i) = null;
+					} else if (day != day2) {
+						$.cookie(i , null);
 					}
 				
 				ncnt = $('#global').find('.new').length;
@@ -201,7 +201,6 @@
 				if ($('article#2').outerHeight() < $(window).height()) {
 					boxTop[i] = boxTop[i] - 230
 				}
-				
 			});	
 		}
 		
@@ -245,12 +244,12 @@
 				$('#global li').removeClass('cu');
 				$('#global li:nth-child(' + secNum2 +')').addClass('cu').children('.new').remove();
 				$('.menu-trigger').append('<span class="new">' + (ncnt - 1) + '</span>');
-				$.cookie(secNum2 , 'visited');
+				$.cookie(secNum2 , hour2);
 			}
 		}
 	}
 	
-	$(document).ready(function() {
+	$(document).ready(function() {			
 		header();
 		setting();
 		tab();
