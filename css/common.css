@@ -11,6 +11,7 @@ html body {
   width: 100%;
   font-size: 16px;
   line-height: 1.75em;
+  overflow-x: hidden;
 }
 @media all and (max-width: 1500px) {
   /* line 9, ../sass/common.scss */
@@ -30,12 +31,12 @@ html body {
     font-size: 0.625rem;
   }
 }
-/* line 28, ../sass/common.scss */
+/* line 29, ../sass/common.scss */
 html body a {
   color: #0278d2;
   text-decoration: none;
 }
-/* line 33, ../sass/common.scss */
+/* line 34, ../sass/common.scss */
 html body img {
   border: none;
   line-height: 100%;

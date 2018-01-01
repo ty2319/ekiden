@@ -80,7 +80,7 @@ nav {
 	}
 	
 	.new {
-		@include abR(-0.5em,-1.6em,0);
+		@include abT(-0.5em,80%,0);
 		font-size		: 0.8em !important;
 		width			: 1.2em !important;
 		height			: 1.2em !important;
@@ -94,7 +94,7 @@ nav {
 		border			: none;
 		
 		@include media($sv) {
-			@include abR(0.5em,0,0);
+			@include abT(0.5em,80%,0);
 		}
 	}
 	

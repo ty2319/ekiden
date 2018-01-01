@@ -97,8 +97,6 @@
 				
 					if (month == month2 && day == day2 && ($.cookie(i , null) || $.cookie(i) < hour)) {
 						$('#global').find('a[href="' + elem + '"]').append('<span class="new">N</span>');
-					} else if (day != day2) {
-						$.cookie(i , null);
 					}
 				
 				ncnt = $('#global').find('.new').length;
@@ -157,7 +155,10 @@
 				$('#global').slideUp(500);
 				$('.menu-trigger').removeClass('on');
 				$('.menu-trigger i').text('menu');
-				$('.menu-trigger .new').show();
+				
+				if (ncnt <= 0) {
+					$('.menu-trigger .new').hide();
+				}
 			});
 		});
 		
@@ -167,7 +168,10 @@
 			
 			if ($('i' , this).text() == 'close'){
 				$('i' , this).text('menu');
-				$('.menu-trigger .new').show();
+				
+				if (ncnt <= 0) {
+					$('.menu-trigger .new').hide();
+				}
 		   } else {
 			   $('i' , this).text('close');
 				$('.menu-trigger .new').hide();
@@ -241,9 +245,15 @@
 			if(secNum != current) {
 				current = secNum;
 				secNum2 = secNum + 1;
+				ncnt	= ncnt - 1;
 				$('#global li').removeClass('cu');
 				$('#global li:nth-child(' + secNum2 +')').addClass('cu').children('.new').remove();
-				$('.menu-trigger').append('<span class="new">' + (ncnt - 1) + '</span>');
+				$('.menu-trigger').append('<span class="new">' + ncnt + '</span>');
+		
+				if (ncnt <= 0) {
+					$('.new').hide();
+				}
+				
 				$.cookie(secNum2 , hour2);
 			}
 		}
