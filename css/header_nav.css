@@ -4,26 +4,27 @@ header {
   background: #000;
   overflow: hidden;
   display: flex;
+  width: 100% !important;
 }
-/* line 11, ../sass/header_nav.scss */
+/* line 12, ../sass/header_nav.scss */
 header h1 {
   position: absolute;
   top: 1em;
   left: 1em;
   z-index: 1;
 }
-/* line 14, ../sass/header_nav.scss */
+/* line 15, ../sass/header_nav.scss */
 header h1 img {
   width: 8%;
   min-width: 70px;
   height: auto;
 }
-/* line 21, ../sass/header_nav.scss */
+/* line 22, ../sass/header_nav.scss */
 header #form {
   display: block;
   position: absolute;
-  top: 1em;
-  left: 1em;
+  top: 0;
+  right: 0;
   z-index: 1;
   width: 0;
   height: 0;
@@ -36,16 +37,15 @@ header #form {
   font-weight: bold;
   text-align: right;
 }
-/* line 35, ../sass/header_nav.scss */
+/* line 36, ../sass/header_nav.scss */
 header #form div {
   margin: -80px 0 0 -5.5em;
   width: 10em;
 }
 @media all and (max-width: 1000px) {
-  /* line 21, ../sass/header_nav.scss */
+  /* line 22, ../sass/header_nav.scss */
   header #form {
-    font-size: 2em;
-    line-height: 125%;
+    font-size: 150%;
   }
 }
 /* line 46, ../sass/header_nav.scss */
@@ -92,11 +92,18 @@ nav .menu-trigger {
   display: none;
   position: relative;
 }
-/* line 82, ../sass/header_nav.scss */
+/* line 81, ../sass/header_nav.scss */
+nav .menu-trigger .new {
+  position: absolute;
+  top: 0.5em;
+  left: 50%;
+  z-index: 0;
+}
+/* line 86, ../sass/header_nav.scss */
 nav .new {
   position: absolute;
   top: -0.5em;
-  left: 80%;
+  left: 90%;
   z-index: 0;
   font-size: 0.8em !important;
   width: 1.2em !important;
@@ -109,15 +116,6 @@ nav .new {
   border-radius: 0.6em !important;
   padding-top: 0.3em;
   border: none;
-}
-@media all and (max-width: 700px) {
-  /* line 82, ../sass/header_nav.scss */
-  nav .new {
-    position: absolute;
-    top: 0.5em;
-    left: 80%;
-    z-index: 0;
-  }
 }
 /* line 101, ../sass/header_nav.scss */
 nav #global {

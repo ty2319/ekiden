@@ -13,7 +13,7 @@
 			
 			$('header').append('<div class="slidebox">');
 	 
-			for (var ul_num = 1; ul_num < 8; ul_num++) {
+			for (var ul_num = 1; ul_num < 13; ul_num++) {
 				$('.slidebox').append('<div class="slider"><ul class="' + ul_num + '">');
 			
 				for (var li_num = 6; li_num >= 0; li_num--) {
@@ -95,8 +95,8 @@
 			 		day		= str[str.length-2],
 			 		hour	= str[str.length-1];
 				
-					if (month == month2 && day == day2 && ($.cookie(i , null) || $.cookie(i) < hour)) {
-						$('#global').find('a[href="' + elem + '"]').append('<span class="new">N</span>');
+					if((month == month2 && day == day2 && $.cookie(elem) < hour) ||(month == month2 && day == day2 && $.cookie(elem) < hour)) {
+						$('#global').find('a[href="#' + elem + '"]').append('<span class="new">N</span>');
 					}
 				
 				ncnt = $('#global').find('.new').length;
@@ -163,7 +163,7 @@
 		});
 		
 		$('.menu-trigger').on('click' , function() {
-			$('#global').slideToggle(500);
+			$('#global').stop().slideToggle(500);
 			$(this).toggleClass('on');
 			
 			if ($('i' , this).text() == 'close'){

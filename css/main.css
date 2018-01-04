@@ -65,7 +65,7 @@ article table thead {
 }
 /* line 67, ../sass/main.scss */
 article table tbody tr:nth-child(even) {
-  background: #b3b3b3;
+  background: #f2f2f2;
 }
 /* line 71, ../sass/main.scss */
 article table th {
