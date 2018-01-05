@@ -46,29 +46,17 @@ $count = pg_fetch_assoc($rs);
 <!--headerSSI1（ｈｅａｄ内）-->
 	<link rel="stylesheet" href="../style.js">
     <link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css">
-
-<style type="text/css">
-<!--
-#banner {
-	margin: 0;
-	padding: 0;
-}
-#banner li {
-	display: inline;
-	margin-right: -5px;
-}
-#banner img {
-	border: none;
-}
--->
-</style>
-
 </head>
 
 
 <!--headerSSI2（ｈｅａｄ後）-->
 <!---->
 <body bgcolor="#FFFFFF" text="#000000" vlink="#FF0000" alink="#FF0000" link="#FF0000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+<!--　■試合用　リダイレクション用ポップアップ　取り扱い注意!!!
+<body bgcolor="#FFFFFF" text="#000000" vlink="#FF0000" alink="#FF0000" link="#FF0000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_openBrWindow('score.html','','')">
+-->
 
 
 <a name="pageTop" id="pageTop"></a>
@@ -87,11 +75,11 @@ $count = pg_fetch_assoc($rs);
 
 
 <table width="600" border="0" cellspacing="0" cellpadding="0">
-  <tr>
+<tr>
   <td colspan="4"><img src="/symbol/share_img/spacer.gif" width="1" height="5" alt=""></td>
   </tr>
   <tr>
-  <td colspan="4" align="center"><img src="img/tit_form.gif" alt="参加・変更申込フォーム"></td>
+  <td colspan="4" align="center"><img src="img/tit_change.gif" alt="参加・変更申込フォーム"></td></td>
   </tr>
   <tr>
   <td colspan="4"><img src="/symbol/share_img/spacer.gif" width="1" height="10" alt=""></td>
@@ -104,82 +92,28 @@ $count = pg_fetch_assoc($rs);
 <table width="560" border="0" align="center" cellpadding="2">
   <tr>
     <td>
-参加をご希望のチームは、以下のフォームからお申し込み下さい。
+　
     </td>
   </tr>
   <tr>
     <td>
-新規のお申し込みをご希望の方は「新規」のフォームへお進みください。
+変更お申し込みは終了しました。
+    </td>
+  </tr>
+  <tr>
+    <td>
+今後、どうしても選手の変更が必要な場合は、当日、受付にてお申し出ください。<br>その際は、当日健康チェックシートを記入の上、医師の問診を受けていただきます。
     </td>
   </tr>  
   <tr>
     <td>　</td>
   </tr>
   <tr>
-    <td>■新規お申し込み<br><br></td>
-  </tr>
-  <tr>
-    <td>
-
-  <tr>
-    <td>
-
-<?php
-
-//データベース接続
-$conn = "host='pgdb' dbname='westofc' user='westofc' password='ofc0610'";
-if(!$db = pg_connect($conn)) {
-echo '接続エラー<br>';
-exit;
-}
-
-$str_sql = "select men from symbol_ekiden;";
-$rs1 = pg_query($db, $str_sql);
-$count_men = pg_fetch_result($rs1,0,0);
-
-$str_sql = "select women from symbol_ekiden;";
-$rs2 = pg_query($db, $str_sql);
-$count_women = pg_fetch_result($rs2,0,0);
-
-$str_sql = "select tug from symbol_ekiden;";
-$rs3 = pg_query($db, $str_sql);
-$count_tug = pg_fetch_result($rs3,0,0);
-
-if ( $count_men > 0 )
- { $men_disp = "<a href=\"goform_men.php\">駅伝大会（男子の部）新規お申し込みフォーム</a>（残数 ".$count_men." ）"; } else { $men_disp = "
-<font color=\"red\">駅伝大会（男子の部）新規お申し込みは終了いたしました。</font><br>　キャンセル待ちを受け付けます。<br>　キャンセル待ちの申請は以下をクリックしてください。<br>
-<a href=\"https://enq.customer.ntt-west.co.jp/cgi-bin/enquete-fc.cgi/1mya/\" target=\"_blank\">駅伝大会（男子の部）キャンセル待ちお申し込みフォーム</a>"; }
-
-if ( $count_women > 0 ) { $women_disp = "<a href=\"goform_women.php\">駅伝大会（女子の部）新規お申し込みフォーム</a>（残数 ".$count_women." ）"; } else { $women_disp = "
-<font color=\"red\">駅伝大会（女子の部）新規お申し込みは終了いたしました。</font><br>　キャンセル待ちを受け付けます。<br>　キャンセル待ちの申請は以下をクリックしてください。<br>
-<a href=\"https://enq.customer.ntt-west.co.jp/cgi-bin/enquete-fc.cgi/5pvx/\" target=\"_blank\">駅伝大会（女子の部）キャンセル待ちお申し込みフォーム</a>"; }
-
-if ( $count_tug > 0 ) { $tug_disp = "<a href=\"goform_tug.php\">綱引き大会　新規お申し込みフォーム</a>（残数 ".$count_tug." ）"; } else { $tug_disp = "
-<font color=\"red\">綱引き大会　新規お申し込みは終了いたしました。</font><br>　キャンセル待ちを受け付けます。<br>　キャンセル待ちの申請は以下をクリックしてください。<br>
-<a href=\"https://enq.customer.ntt-west.co.jp/cgi-bin/enquete-fc.cgi/mmas/\" target=\"_blank\">駅伝大会（綱引き）キャンセル待ちお申し込みフォーム</a>"; }
-
-?>
-
-      <?php echo $men_disp; ?><br><br>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <?php echo $women_disp; ?><br><br>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <?php echo $tug_disp; ?><br><br>
-    </td>
-  </tr>
-
-    </td>
+    <td>　</td>
   </tr>
   <tr>
     <td>　</td>
   </tr>
-
 </table>
 
   <!-- メインコンテンツ ここまで-->
@@ -204,7 +138,7 @@ if ( $count_tug > 0 ) { $tug_disp = "<a href=\"goform_tug.php\">綱引き大会　新規
 	</tr>
 	<tr>
 		<td align="left"><a href="http://www.ntt-west.co.jp/share/copyright.html"><img src="/symbol/share_img/copy.gif" alt="Copyright(c) 西日本電信電話株式会社" width="250" height="19" border="0"></a></td>
-	    <td align="right"><a href="http://www.ntt-west.co.jp/share/privacy.html" target="_blank" class="f-font">プライバシーポリシー</a><img src="/symbol/share_img/spacer.gif" alt="" width="10" height="1"></td>
+	    <td align="right"><a href="http://www.ntt-west.co.jp/share/privacy.html" class="f-font">プライバシーポリシー</a><img src="/symbol/share_img/spacer.gif" alt="" width="10" height="1"></td>
 	</tr>
 </table>
 </body>

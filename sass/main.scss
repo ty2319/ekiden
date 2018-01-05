@@ -121,12 +121,6 @@ article {
 					display		: block;
 					border		: none;
 					background	: none;
-					text-indent	: -1.5em;
-					padding-left: 1.5em;
-					
-					&:before {
-						content: "※ ";
-					}
 					
 					&:hover {
 						background: none;
@@ -281,6 +275,8 @@ article {
 	.caution {
 		font-weight	: normal;
 		color		: #F00;
+		text-indent	: -1.5em;
+		padding-left: 1.5em;
 		
 		&:before {
 			content: "※ ";

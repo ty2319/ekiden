@@ -124,36 +124,30 @@ article > section.info ul li {
   display: block;
   border: none;
   background: none;
-  text-indent: -1.5em;
-  padding-left: 1.5em;
 }
-/* line 127, ../sass/main.scss */
-article > section.info ul li:before {
-  content: "※ ";
-}
-/* line 131, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 article > section.info ul li:hover {
   background: none;
 }
-/* line 135, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 article > section.info ul li a {
   display: inline !important;
   color: #0278d2 !important;
   padding: 0 !important;
 }
-/* line 144, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 article > section dl {
   border: 1px solid #ccc;
   margin: 1em 0 2em 0;
   padding: 1em;
 }
-/* line 149, ../sass/main.scss */
+/* line 143, ../sass/main.scss */
 article > section dl dt {
   background: none;
   color: #0278d2;
   font-weight: bold;
 }
-/* line 155, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
 article > section dl dd a {
   background: none;
   padding: 0;
@@ -162,12 +156,12 @@ article > section dl dd a {
   color: #0278d2;
   text-decoration: underline;
 }
-/* line 163, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 article > section dl dd a:hover {
   background-color: rgba(255, 255, 255, 0.7);
   color: #3daafd;
 }
-/* line 170, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 article > section#news dl, article > article > section#best dl {
   overflow: hidden;
   margin: 0;
@@ -176,27 +170,27 @@ article > section#news dl, article > article > section#best dl {
   display: flex;
   flex-wrap: wrap;
 }
-/* line 178, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 article > section#news dl dt, article > article > section#best dl dt {
   width: 20%;
   padding: 1em 0.5em;
   border-bottom: dotted 1px #4d4d4d;
 }
-/* line 183, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 article > section#news dl dt:first-of-type, article > article > section#best dl dt:first-of-type {
   padding-top: 0;
 }
-/* line 188, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
 article > section#news dl dd, article > article > section#best dl dd {
   width: 80%;
   border-bottom: dotted 1px #4d4d4d;
   padding: 1em 0.5em;
 }
-/* line 193, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
 article > section#news dl dd:first-of-type, article > article > section#best dl dd:first-of-type {
   padding-top: 0;
 }
-/* line 199, ../sass/main.scss */
+/* line 193, ../sass/main.scss */
 article > section ol {
   text-align: center;
   display: flex;
@@ -205,46 +199,46 @@ article > section ol {
   align-items: stretch;
   align-content: flex-start;
 }
-/* line 207, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 article > section ol li {
   flex: 1 1 150px;
   list-style: none;
   border: 1px solid #ccc;
   margin: 2em 1em 0 1em;
 }
-/* line 213, ../sass/main.scss */
+/* line 207, ../sass/main.scss */
 article > section ol li dl {
   border: none;
   margin: 0;
   padding: 0;
 }
-/* line 218, ../sass/main.scss */
+/* line 212, ../sass/main.scss */
 article > section ol li dl dt {
   background-color: #0278d2;
   color: #fff;
   padding: 1em;
 }
-/* line 224, ../sass/main.scss */
+/* line 218, ../sass/main.scss */
 article > section ol li dl dd {
   margin: 1em;
 }
-/* line 227, ../sass/main.scss */
+/* line 221, ../sass/main.scss */
 article > section ol li dl dd a {
   background: #0a94fd;
   padding: 1em;
   display: block;
   color: #fff;
 }
-/* line 233, ../sass/main.scss */
+/* line 227, ../sass/main.scss */
 article > section ol li dl dd a i {
   margin-right: 0.5em;
   font-size: 1.25em;
 }
-/* line 238, ../sass/main.scss */
+/* line 232, ../sass/main.scss */
 article > section ol li dl dd a:hover {
   background-color: #3daafd;
 }
-/* line 247, ../sass/main.scss */
+/* line 241, ../sass/main.scss */
 article > section ul {
   text-align: center;
   display: flex;
@@ -254,63 +248,65 @@ article > section ul {
   align-content: flex-start;
   font-size: 1.25em;
 }
-/* line 256, ../sass/main.scss */
+/* line 250, ../sass/main.scss */
 article > section ul li {
   flex: 1 1 200px;
   list-style: none;
   border: 1px solid #ccc;
   background-color: #0a94fd;
 }
-/* line 262, ../sass/main.scss */
+/* line 256, ../sass/main.scss */
 article > section ul li:hover {
   background-color: #3daafd;
 }
-/* line 266, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 article > section ul li a {
   display: block;
   list-style: none;
   color: #fff;
   padding: 2em 1em 0 1em;
 }
-/* line 272, ../sass/main.scss */
+/* line 266, ../sass/main.scss */
 article > section ul li a i {
   display: block !important;
   padding-bottom: 0.5em !important;
 }
-/* line 281, ../sass/main.scss */
+/* line 275, ../sass/main.scss */
 article .caution {
   font-weight: normal;
   color: #F00;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
 }
-/* line 285, ../sass/main.scss */
+/* line 281, ../sass/main.scss */
 article .caution:before {
   content: "※ ";
 }
-/* line 289, ../sass/main.scss */
+/* line 285, ../sass/main.scss */
 article .caution:nth-of-type(1) {
   margin-top: 1em;
 }
-/* line 294, ../sass/main.scss */
+/* line 290, ../sass/main.scss */
 article p {
   margin: 1.5em auto 0 auto;
 }
-/* line 298, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 article #tab {
   margin: 5em 3em 0 2em;
   display: flex;
   align-items: flex-end;
 }
 @media all and (max-width: 500px) {
-  /* line 298, ../sass/main.scss */
+  /* line 294, ../sass/main.scss */
   article #tab {
     margin: 3em 1em 0 1em;
   }
 }
-/* line 307, ../sass/main.scss */
+/* line 303, ../sass/main.scss */
 article #tab li {
   vertical-align: bottom;
 }
-/* line 310, ../sass/main.scss */
+/* line 306, ../sass/main.scss */
 article #tab li a {
   display: block;
   margin-left: 1em;
@@ -321,29 +317,29 @@ article #tab li a {
   font-weight: bold;
 }
 @media all and (max-width: 500px) {
-  /* line 310, ../sass/main.scss */
+  /* line 306, ../sass/main.scss */
   article #tab li a {
     margin-left: 0.5em;
   }
 }
-/* line 323, ../sass/main.scss */
+/* line 319, ../sass/main.scss */
 article #tab li a#mens {
   background-color: #40acfd;
 }
-/* line 327, ../sass/main.scss */
+/* line 323, ../sass/main.scss */
 article #tab li a#women {
   background-color: #fd407f;
 }
-/* line 331, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 article #tab li a#tug {
   background-color: #e59702;
 }
-/* line 335, ../sass/main.scss */
+/* line 331, ../sass/main.scss */
 article #tab li a.current {
   padding: 1.5em 3em;
   font-size: 1.5em;
 }
-/* line 343, ../sass/main.scss */
+/* line 339, ../sass/main.scss */
 article .contents {
   margin: 0 3em 5em 3em;
   clear: both;
@@ -351,46 +347,46 @@ article .contents {
   overflow: hidden;
 }
 @media all and (max-width: 500px) {
-  /* line 343, ../sass/main.scss */
+  /* line 339, ../sass/main.scss */
   article .contents {
     margin: 0 1em 5em 1em;
   }
 }
-/* line 353, ../sass/main.scss */
+/* line 349, ../sass/main.scss */
 article .contents#tabBox1 {
   border-top: #40acfd solid 3px;
 }
-/* line 356, ../sass/main.scss */
+/* line 352, ../sass/main.scss */
 article .contents#tabBox1 caption {
   color: #40acfd;
 }
-/* line 360, ../sass/main.scss */
+/* line 356, ../sass/main.scss */
 article .contents#tabBox1 thead {
   background-color: #40acfd;
   color: #fff;
 }
-/* line 366, ../sass/main.scss */
+/* line 362, ../sass/main.scss */
 article .contents#tabBox2 {
   border-top: #fd407f solid 3px;
 }
-/* line 369, ../sass/main.scss */
+/* line 365, ../sass/main.scss */
 article .contents#tabBox2 caption {
   color: #fd407f;
 }
-/* line 373, ../sass/main.scss */
+/* line 369, ../sass/main.scss */
 article .contents#tabBox2 thead {
   background-color: #fd407f;
   color: #fff;
 }
-/* line 379, ../sass/main.scss */
+/* line 375, ../sass/main.scss */
 article .contents#tabBox3 {
   border-top: #e59702 solid 3px;
 }
-/* line 382, ../sass/main.scss */
+/* line 378, ../sass/main.scss */
 article .contents#tabBox3 caption {
   color: #e59702;
 }
-/* line 386, ../sass/main.scss */
+/* line 382, ../sass/main.scss */
 article .contents#tabBox3 thead {
   background-color: #e59702;
   color: #fff;
