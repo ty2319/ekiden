@@ -294,7 +294,9 @@ article p {
 article #tab {
   margin: 5em 3em 0 2em;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
+  width: 100%;
 }
 @media all and (max-width: 500px) {
   /* line 294, ../sass/main.scss */
@@ -302,11 +304,7 @@ article #tab {
     margin: 3em 1em 0 1em;
   }
 }
-/* line 303, ../sass/main.scss */
-article #tab li {
-  vertical-align: bottom;
-}
-/* line 306, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 article #tab li a {
   display: block;
   margin-left: 1em;
@@ -317,37 +315,36 @@ article #tab li a {
   font-weight: bold;
 }
 @media all and (max-width: 500px) {
-  /* line 306, ../sass/main.scss */
+  /* line 307, ../sass/main.scss */
   article #tab li a {
     margin-left: 0.5em;
   }
 }
-/* line 319, ../sass/main.scss */
+/* line 320, ../sass/main.scss */
 article #tab li a#mens {
   background-color: #40acfd;
 }
-/* line 323, ../sass/main.scss */
+/* line 324, ../sass/main.scss */
 article #tab li a#women {
   background-color: #fd407f;
 }
-/* line 327, ../sass/main.scss */
+/* line 328, ../sass/main.scss */
 article #tab li a#tug {
   background-color: #e59702;
 }
-/* line 331, ../sass/main.scss */
+/* line 332, ../sass/main.scss */
 article #tab li a.current {
   padding: 1.5em 3em;
   font-size: 1.5em;
 }
-/* line 339, ../sass/main.scss */
+/* line 340, ../sass/main.scss */
 article .contents {
   margin: 0 3em 5em 3em;
-  clear: both;
   width: 100%;
   overflow: hidden;
 }
 @media all and (max-width: 500px) {
-  /* line 339, ../sass/main.scss */
+  /* line 340, ../sass/main.scss */
   article .contents {
     margin: 0 1em 5em 1em;
   }

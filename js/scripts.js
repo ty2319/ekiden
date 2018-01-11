@@ -5,7 +5,8 @@
 		today	= new Date( $.now() ),
 		month2	= (today.getMonth() + 1),
 		day2	= (today.getDate()),
-		hour2	= (today.getHours());
+		hour2	= (today.getHours()),
+		minutes2= (today.getMinutes());
 	
 	header = function() {
 		
@@ -91,11 +92,13 @@
 				var elem	= data.id,
 					date	= data.date,
 					str		= date.split('/'),
-					month	= str[str.length-3],
-			 		day		= str[str.length-2],
-			 		hour	= str[str.length-1];
+					month	= str[str.length-4],
+			 		day		= str[str.length-3],
+			 		hour	= str[str.length-2],
+			 		minutes	= str[str.length-1],
+					time	= hour + '.' + minutes;
 				
-					if((month == month2 && day == day2 && $.cookie(elem) < hour) ||(month == month2 && day == day2 && $.cookie(elem) < hour)) {
+					if((month == month2 && day == day2 && $.cookie(elem) <= time) || $.cookie(elem) == null) {
 						$('#global').find('a[href="#' + elem + '"]').append('<span class="new">N</span>');
 					}
 				
@@ -254,7 +257,7 @@
 					$('.new').hide();
 				}
 				
-				$.cookie(secNum2 , hour2);
+				$.cookie(secNum2 , hour2 + '.' + minutes2);
 			}
 		}
 	}
